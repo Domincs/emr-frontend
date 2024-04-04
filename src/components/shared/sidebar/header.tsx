@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { TbCheck } from "react-icons/tb";
-import { Command, LogOut, Plus, Settings, User, UserPlus } from "lucide-react";
+import { LogOut } from "lucide-react";
 import { Flex, Button, Avatar, Menu, Text } from "@/components/ui";
-import {
-  ArrowDownIcon,
-  FuneralIcon,
-  NewIssueIcon,
-  CrediLifeIcon,
-} from "@/components/icons";
+
 import { signOut } from "next-auth/react";
 
 export const Header = () => {
