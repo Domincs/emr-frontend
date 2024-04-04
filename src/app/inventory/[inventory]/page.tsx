@@ -9,5 +9,6 @@ type Props = {
 
 export default async function Home({ params: { inventory } }: Props) {
   const invetory = inventoryService.getInventory("");
+
   return <DisplayInventoryDetails />;
 }

@@ -5,10 +5,11 @@ const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 export const getInventory = async (queryString = "") => {
   const inventory = await get<
     APIResponse<{
-      results: Inventory[];
-      count: number;
+      data: Inventory[];
+      status: number;
     }>
   >(`${baseUrl}/inventory/?${queryString}`);
+  console.log(inventory);
 
   return inventory;
 };
