@@ -10,8 +10,12 @@ export type APIResponse<T> = {
 
 export type User = {
   id: number;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
   created: string;
   updated: string;
+  permissionsGroup?: string;
 };
 
 export type Drug = {

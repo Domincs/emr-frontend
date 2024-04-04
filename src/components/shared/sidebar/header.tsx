@@ -40,7 +40,7 @@ export const Header = () => {
           </Menu.Button>
           <Menu.Items align="end">
             <Menu.Group className="mb-3 mt-1 px-4">
-              <Text>test@inventory.com</Text>
+              <Text>superadmin@example.com</Text>
             </Menu.Group>
             <Menu.Separator />
             <Menu.Group>
