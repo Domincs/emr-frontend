@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  @apply text-[12.5px] text-gray-300 overflow-hidden bg-gradient-to-br dark:from-dark/75 via-30% dark:via-dark dark:to-dark-300 dark:text-gray-200 antialiased;
+}
+
+/* Chrome, Safari, Edge */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-white dark:bg-[#666666b3];
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-[5px] bg-[#666666b3] dark:bg-white;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #666666b3 transparent;
+}
+
+[cmdk-overlay] {
+  @apply fixed inset-0 z-40 block h-screen w-screen bg-black/10 backdrop-blur-[0.5px];
+}
+
+.ProseMirror-focused {
+  @apply outline-none;
+}
+
+ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+ul[data-type="taskList"] p {
+  margin: 0;
+}
+
+ul[data-type="taskList"] li {
+  @apply flex items-center;
+}
+
+ul[data-type="taskList"] li input {
+  @apply relative top-[0.2rem] h-[1.1rem] w-[1.1rem] accent-primary;
+}
+
+ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+
+ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+
+ul[data-type="taskList"] li ul li,
+ul[data-type="taskList"] li ol li {
+  display: list-item;
+}
+
+ul[data-type="taskList"] > li ul[data-type="taskList"],
+ul[data-type="taskList"] > li ol[data-type="taskList"] {
+  display: flex;
+}
+
+.tiptap .is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  @apply pointer-events-none float-left h-0 text-gray-250/80 dark:text-gray-200/60;
+}
+
+/*** Works on common browsers ***/
+::selection {
+  @apply bg-primary text-dark;
+}
+
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  @apply bg-primary text-dark;
+}
+
+/***For Other Browsers ***/
+::-o-selection {
+  @apply bg-primary text-dark;
+}
+
+::-ms-selection {
+  @apply bg-primary text-dark;
+}
+
+/*** For Webkit ***/
+::-webkit-selection {
+  @apply bg-primary text-dark;
+}
+
+:root {
+  /* Main Colors */
+  --nprogress-color: #1cd97e;
+}
+
+/* CSS color for nprogress */
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress &:after {
+  display: block;
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* @apply backdrop-blur-[0.5px]; */
+}
+
+#nprogress .bar {
+  @apply fixed left-0 top-0 h-[5px] w-full bg-primary;
+  z-index: 19031 !important;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px var(--nprogress-color), 0 0 5px var(--nprogress-color);
+  opacity: 1;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 1rem;
+  right: 7px;
+}
+#nprogress .spinner-icon {
+  width: 23px;
+  height: 23px;
+  box-sizing: border-box;
+  border: solid 3px transparent;
+  border-top-color: var(--nprogress-color);
+  border-left-color: var(--nprogress-color);
+  border-radius: 50%;
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,15 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "standalone",
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/inventory",
+        permanent: false,
+      },
+    ];
+  },
+};
+
+export default nextConfig;
