@@ -11,5 +11,5 @@ export const getInventory = async (queryString = "") => {
   >(`${baseUrl}/inventory/?${queryString}`);
   console.log(inventory);
 
-  return inventory;
+  return {results: inventory.data?.data ?? [], count: inventory?.data?.data?.length??0};
 };
